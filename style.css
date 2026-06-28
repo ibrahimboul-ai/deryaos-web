@@ -54,11 +54,13 @@ h3{margin:0 0 6px;font-size:17px;color:var(--ink)}
 .card p{color:var(--dim);margin:0;font-size:14.5px}
 
 /* download */
-.dl .grid{grid-template-columns:1fr 1fr}
+.dl .grid{grid-template-columns:repeat(2,1fr)}
 .dlcard{display:flex;flex-direction:column}
 .dlcard p{flex:1;margin-bottom:14px}
 .dlbtn{align-self:flex-start;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-weight:600;padding:9px 16px;border-radius:9px;font-size:14px}
 .dlbtn:hover{text-decoration:none;opacity:.92}
+.dlsub{flex:0 !important;margin:10px 0 0 !important;font-size:13px}
+.guidelink{margin:-4px 0 18px;font-size:15px;font-weight:600}
 .dlnote{color:var(--dim);font-size:13.5px;margin-top:18px}
 
 .beta p{color:var(--dim);max-width:760px}

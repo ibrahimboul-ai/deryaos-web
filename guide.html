@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeryaOS — Install &amp; setup guide</title>
+<meta name="description" content="Step-by-step beginner guide to download, set up and run DeryaOS — in VMware or VirtualBox (one-click OVA), in QEMU, or installed on a real PC.">
+<link rel="stylesheet" href="style.css">
+<style>
+.guide{max-width:820px;margin:0 auto;padding:0 20px}
+.guide h2{margin-top:42px;border-bottom:1px solid var(--line,#1e2740);padding-bottom:8px}
+.guide h3{margin-top:26px}
+.guide ol,.guide ul{padding-left:22px;line-height:1.7}
+.guide li{margin:7px 0}
+.guide code,.guide kbd{background:#0b0f17;border:1px solid #2a3a63;border-radius:6px;padding:1px 6px;font-family:Consolas,monospace;font-size:.92em;color:#ffd479}
+.guide pre{background:#0b0f17;border:1px solid #2a3a63;border-radius:10px;padding:14px 16px;overflow:auto}
+.guide pre code{border:0;padding:0;color:#9cc0e6}
+.note{background:#121826;border:1px solid #1e2740;border-left:3px solid var(--accent,#4f8cff);border-radius:8px;padding:12px 16px;margin:18px 0}
+.warn{border-left-color:#ff6b6b}
+.toc{background:#121826;border:1px solid #1e2740;border-radius:10px;padding:14px 20px;margin:24px 0}
+.toc a{display:inline-block;margin:3px 14px 3px 0}
+.backlink{display:inline-block;margin:22px 0 0;font-weight:600}
+.pill{display:inline-block;background:#0b0f17;border:1px solid #2a3a63;border-radius:999px;padding:3px 11px;font-size:12.5px;color:#9aa6be;margin:0 6px 6px 0}
+</style>
+</head>
+<body>
+
+<nav class="langbar">
+  <div class="wrap">
+    <a class="brandmini" href="index.html" style="text-decoration:none">Derya<span>OS</span></a>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:24px">
+  <div class="wrap">
+    <div class="logo" style="font-size:34px">Install &amp; setup guide</div>
+    <p class="sub">How to download, set up and run DeryaOS — written for people who have never used a virtual machine before. Pick the path that fits you.</p>
+    <p><span class="pill">Easiest: VMware / VirtualBox</span><span class="pill">QEMU</span><span class="pill">Real PC install</span></p>
+  </div>
+</header>
+
+<main class="guide">
+
+  <div class="note warn">
+    <strong>Before you start.</strong> DeryaOS is early beta software. Running it inside a virtual machine (below) is completely safe for your computer. Only the “real PC install” section touches a physical disk — don’t do that on a machine whose data you can’t afford to lose.
+  </div>
+
+  <div class="toc">
+    <strong>On this page</strong><br>
+    <a href="#what">What you’ll need</a>
+    <a href="#vmware">A · VMware / VirtualBox (easiest)</a>
+    <a href="#qemu">B · QEMU</a>
+    <a href="#real">C · Install on a real PC</a>
+    <a href="#first">First steps after it boots</a>
+    <a href="#updates">Updates</a>
+  </div>
+
+  <h2 id="what">What you’ll need</h2>
+  <ul>
+    <li>A Windows, macOS or Linux computer with about <strong>2 GB of free RAM</strong> and <strong>1 GB free disk</strong>.</li>
+    <li>One of: <strong>VMware Workstation/Player</strong>, <strong>VirtualBox</strong>, or <strong>QEMU</strong> (all free). The guide shows each.</li>
+    <li>A few minutes. No account or sign-up is needed to download.</li>
+  </ul>
+  <p>All downloads are on the <a href="https://github.com/deryaos/deryaos.github.io/releases/latest">DeryaOS releases page</a>.</p>
+
+  <h2 id="vmware">A · Run it in VMware or VirtualBox <span style="color:var(--dim);font-weight:400;font-size:.7em">— easiest, recommended</span></h2>
+  <p>This uses a ready-made “appliance” file (<code>.ova</code>). You import it once and DeryaOS boots — nothing to install or configure.</p>
+  <ol>
+    <li><strong>Get a virtual-machine app</strong> (if you don’t have one):
+      <ul>
+        <li>VirtualBox — free, all platforms: <a href="https://www.virtualbox.org/wiki/Downloads">virtualbox.org/wiki/Downloads</a></li>
+        <li>VMware Workstation Player — free for personal use: <a href="https://www.vmware.com/products/workstation-player.html">vmware.com</a></li>
+      </ul>
+    </li>
+    <li><strong>Download the appliance:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86.ova">deryaos-x86.ova</a> (about 7 MB).</li>
+    <li><strong>Import it:</strong>
+      <ul>
+        <li><em>VirtualBox</em> → menu <kbd>File → Import Appliance…</kbd> → choose the <code>.ova</code> → <kbd>Next</kbd> → <kbd>Finish</kbd>.</li>
+        <li><em>VMware</em> → menu <kbd>File → Open…</kbd> → choose the <code>.ova</code> → give it a name → <kbd>Import</kbd>. (If VMware warns the appliance “did not pass OVF specification conformance”, click <kbd>Retry</kbd> — it imports fine.)</li>
+      </ul>
+    </li>
+    <li><strong>Start it:</strong> select the new <em>DeryaOS</em> machine and click <kbd>Start</kbd> (the green ▶). DeryaOS boots in a window.</li>
+  </ol>
+  <div class="note">Tip: click inside the window to give it your mouse/keyboard; press the host key (VirtualBox: <kbd>Right Ctrl</kbd>; VMware: <kbd>Ctrl+Alt</kbd>) to release it.</div>
+
+  <h2 id="qemu">B · Run it in QEMU</h2>
+  <p>QEMU is a free, lightweight emulator. We ship a zip with the disk image and one-click launchers.</p>
+  <ol>
+    <li><strong>Install QEMU:</strong> <a href="https://www.qemu.org/download/">qemu.org/download</a> (pick your operating system; on Windows use the installer, on macOS <code>brew install qemu</code>, on Linux your package manager).</li>
+    <li><strong>Download the VM bundle:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86-vm.zip">deryaos-x86-vm.zip</a> and unzip it anywhere.</li>
+    <li><strong>Run the launcher</strong> inside the unzipped folder:
+      <ul>
+        <li>Windows — double-click <code>run-vm-windows.bat</code></li>
+        <li>Linux / macOS — open a terminal in the folder and run <code>./run-vm-linux.sh</code></li>
+      </ul>
+    </li>
+  </ol>
+  <p>Prefer to type it yourself? The launcher just runs:</p>
+  <pre><code>qemu-system-x86_64 -drive file=deryaos.img,format=raw -m 512 \
+  -netdev user,id=n0 -device e1000,netdev=n0 -rtc base=localtime -display gtk</code></pre>
+
+  <h2 id="real">C · Install on a real PC</h2>
+  <div class="note warn"><strong>This writes to a real disk.</strong> Use a spare machine or one whose data you’ve backed up. You have been warned.</div>
+  <ol>
+    <li><strong>Download the installer image:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86.img.gz">deryaos-x86.img.gz</a>, then un-gzip it to get <code>deryaos.img</code> (Windows: 7-Zip; Linux/macOS: <code>gunzip deryaos-x86.img.gz</code>).</li>
+    <li><strong>Write it to a USB stick</strong> (this erases the stick):
+      <ul>
+        <li>Windows — use <a href="https://rufus.ie/">Rufus</a>: select the USB, choose <code>deryaos.img</code>, write in <em>DD image</em> mode.</li>
+        <li>Linux/macOS — <code>sudo dd if=deryaos.img of=/dev/sdX bs=4M status=progress</code> (replace <code>/dev/sdX</code> with your USB device — double-check it!).</li>
+      </ul>
+    </li>
+    <li><strong>Boot the target PC from the USB</strong> (open its boot menu — usually <kbd>F12</kbd>/<kbd>F11</kbd>/<kbd>Esc</kbd> at power-on). DeryaOS comes up at a text shell.</li>
+    <li><strong>Install to the internal disk</strong> from that shell:
+      <pre><code>inst plan ATA0            # survey the disk (try AHCI0 / NVME0 if ATA0 is empty)
+inst -f ATA0 compact     # fresh full install to that disk</code></pre>
+      Then reboot and pick the new disk. <em>Tiny CD/diskette alternative:</em> the <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/DeryaOS-minimal-seed.iso">seed ISO</a> and <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/DeryaOS-minimal-seed.img">1.44 MB diskette</a> boot the same installer.</li>
+  </ol>
+
+  <h2 id="first">First steps after it boots</h2>
+  <ul>
+    <li>If it starts in <strong>text mode</strong>, you’ll see a <code>deryaos:C:/ $</code> prompt. Useful commands: <code>help</code>, <code>ver</code> (version), <code>ls</code> (list files), <code>gui</code> (start the desktop where available).</li>
+    <li>On the <strong>desktop</strong>: a taskbar with a Start menu, draggable windows, and built-in apps — a text editor, file manager, web viewer, calculator, clock, system tools and a few games.</li>
+    <li>Networking is on by default in the VM; the web viewer and update tools can reach the internet through it.</li>
+  </ul>
+
+  <h2 id="updates">Updates (over-the-air)</h2>
+  <p>DeryaOS can update itself: it fetches new components in the background and verifies each one cryptographically (Ed25519 + SHA-256) before applying it, rolling back automatically if a build misbehaves. To check for updates from the shell:</p>
+  <pre><code>osupdate check
+osupdate sync</code></pre>
+  <p>For now, the simplest way to get the newest build is to grab the latest VM or image from the <a href="https://github.com/deryaos/deryaos.github.io/releases/latest">releases page</a>. A hosted update service is being brought online; once it’s live, the VMs will pick up new builds on their own.</p>
+
+  <a class="backlink" href="index.html">← Back to deryaos.github.io</a>
+  <p style="color:var(--dim);font-size:13px;margin-top:30px">Questions or stuck? <a href="mailto:ibrahim.boul@gmail.com?subject=DeryaOS%20help">Get in touch →</a></p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>DeryaOS · an independent operating-system project.</p>
+  </div>
+</footer>
+
+</body>
+</html>

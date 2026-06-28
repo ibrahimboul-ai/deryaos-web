@@ -97,19 +97,32 @@
   <section class="dl">
     <h2 data-i18n="h_dl">Download</h2>
     <p data-i18n="dl_p">Try DeryaOS for x86 (32/64-bit). It's early beta software — don't run it on a machine whose data you can't afford to lose.</p>
+    <p class="guidelink"><a href="guide.html" data-i18n="dl_guide">New to this? Read the step-by-step Install &amp; setup guide →</a></p>
     <div class="grid">
       <div class="card dlcard">
-        <h3 data-i18n="dl_vm">Sample VM (ready to run)</h3>
+        <h3 data-i18n="dl_ova">Ready VM — VMware / VirtualBox</h3>
+        <p data-i18n="dl_ova_d">A preinstalled appliance. In VMware or VirtualBox choose File → Import (Open Appliance), pick the .ova, and boot straight to the DeryaOS desktop.</p>
+        <a class="dlbtn" href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86.ova">deryaos-x86.ova</a>
+      </div>
+      <div class="card dlcard">
+        <h3 data-i18n="dl_vm">Ready VM — QEMU</h3>
         <p data-i18n="dl_vm_d">Unzip, install QEMU, run the launcher — a DeryaOS desktop boots in a window.</p>
-        <a class="dlbtn" href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4231/deryaos-x86-vm.zip">deryaos-x86-vm.zip</a>
+        <a class="dlbtn" href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86-vm.zip">deryaos-x86-vm.zip</a>
+        <p class="dlsub"><a href="https://www.qemu.org/download/" data-i18n="dl_qemu">Download QEMU →</a></p>
       </div>
       <div class="card dlcard">
         <h3 data-i18n="dl_img">Installer image (USB)</h3>
         <p data-i18n="dl_img_d">Gunzip and write to a USB stick (Rufus / dd), then boot to install on real hardware.</p>
-        <a class="dlbtn" href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4231/deryaos-x86.img.gz">deryaos-x86.img.gz</a>
+        <a class="dlbtn" href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86.img.gz">deryaos-x86.img.gz</a>
+      </div>
+      <div class="card dlcard">
+        <h3 data-i18n="dl_seed">Seed CD &amp; diskette</h3>
+        <p data-i18n="dl_seed_d">Small bootable media that installs the full system. ISO for a CD or a VM, plus a classic 1.44 MB boot diskette.</p>
+        <a class="dlbtn" href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/DeryaOS-minimal-seed.iso">seed.iso</a>
+        <p class="dlsub"><a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/DeryaOS-minimal-seed.img" data-i18n="dl_seed_flp">1.44 MB diskette →</a></p>
       </div>
     </div>
-    <p class="dlnote" data-i18n="dl_note">More architectures, ISO and seed images are on the way. <a href="https://github.com/deryaos/deryaos.github.io/releases">All releases →</a></p>
+    <p class="dlnote" data-i18n="dl_note">More architectures and images are on the way. <a href="https://github.com/deryaos/deryaos.github.io/releases">All releases →</a></p>
   </section>
 
   <section class="beta">
@@ -157,9 +170,14 @@ const I18N = {
     c6h:"Its own installer", c6p:"Boots from USB or CD, partitions a disk, and installs — boot manager included.",
     h_dl:"Download",
     dl_p:"Try DeryaOS for x86 (32/64-bit). It's early beta software — don't run it on a machine whose data you can't afford to lose.",
-    dl_vm:"Sample VM (ready to run)", dl_vm_d:"Unzip, install QEMU, run the launcher — a DeryaOS desktop boots in a window.",
+    dl_guide:"New to this? Read the step-by-step Install & setup guide →",
+    dl_ova:"Ready VM — VMware / VirtualBox", dl_ova_d:"A preinstalled appliance. In VMware or VirtualBox choose File → Import (Open Appliance), pick the .ova, and boot straight to the DeryaOS desktop.",
+    dl_vm:"Ready VM — QEMU", dl_vm_d:"Unzip, install QEMU, run the launcher — a DeryaOS desktop boots in a window.",
+    dl_qemu:"Download QEMU →",
     dl_img:"Installer image (USB)", dl_img_d:"Gunzip and write to a USB stick (Rufus / dd), then boot to install on real hardware.",
-    dl_note:'More architectures, ISO and seed images are on the way. <a href="https://github.com/deryaos/deryaos.github.io/releases">All releases →</a>',
+    dl_seed:"Seed CD & diskette", dl_seed_d:"Small bootable media that installs the full system. ISO for a CD or a VM, plus a classic 1.44 MB boot diskette.",
+    dl_seed_flp:"1.44 MB diskette →",
+    dl_note:'More architectures and images are on the way. <a href="https://github.com/deryaos/deryaos.github.io/releases">All releases →</a>',
     h_beta:"Beta program",
     beta1:"DeryaOS is being tested on real hardware and in virtual machines. We are looking for a small group of <strong>beta testers</strong> who can run it, push it, and report what they find — what works, what breaks, what feels wrong. Findings are reviewed together and turned into fixes.",
     beta2:"It is early software: expect rough edges, and don't run it on a machine whose data you can't afford to lose. If that sounds like your kind of fun, get in touch.",
