@@ -72,7 +72,7 @@
         <li>VMware Workstation Player — free for personal use: <a href="https://www.vmware.com/products/workstation-player.html">vmware.com</a></li>
       </ul>
     </li>
-    <li><strong>Download the appliance:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86.ova">deryaos-x86.ova</a> (about 7 MB).</li>
+    <li><strong>Download the appliance:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4274/deryaos-x86.ova">deryaos-x86.ova</a> (about 7 MB).</li>
     <li><strong>Import it:</strong>
       <ul>
         <li><em>VirtualBox</em> → menu <kbd>File → Import Appliance…</kbd> → choose the <code>.ova</code> → <kbd>Next</kbd> → <kbd>Finish</kbd>.</li>
@@ -87,7 +87,7 @@
   <p>QEMU is a free, lightweight emulator. We ship a zip with the disk image and one-click launchers.</p>
   <ol>
     <li><strong>Install QEMU:</strong> <a href="https://www.qemu.org/download/">qemu.org/download</a> (pick your operating system; on Windows use the installer, on macOS <code>brew install qemu</code>, on Linux your package manager).</li>
-    <li><strong>Download the VM bundle:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86-vm.zip">deryaos-x86-vm.zip</a> and unzip it anywhere.</li>
+    <li><strong>Download the VM bundle:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4274/deryaos-x86-vm.zip">deryaos-x86-vm.zip</a> and unzip it anywhere.</li>
     <li><strong>Run the launcher</strong> inside the unzipped folder:
       <ul>
         <li>Windows — double-click <code>run-vm-windows.bat</code></li>
@@ -102,7 +102,7 @@
   <h2 id="real">C · Install on a real PC</h2>
   <div class="note warn"><strong>This writes to a real disk.</strong> Use a spare machine or one whose data you’ve backed up. You have been warned.</div>
   <ol>
-    <li><strong>Download the installer image:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/deryaos-x86.img.gz">deryaos-x86.img.gz</a>, then un-gzip it to get <code>deryaos.img</code> (Windows: 7-Zip; Linux/macOS: <code>gunzip deryaos-x86.img.gz</code>).</li>
+    <li><strong>Download the installer image:</strong> <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4274/deryaos-x86.img.gz">deryaos-x86.img.gz</a>, then un-gzip it to get <code>deryaos.img</code> (Windows: 7-Zip; Linux/macOS: <code>gunzip deryaos-x86.img.gz</code>).</li>
     <li><strong>Write it to a USB stick</strong> (this erases the stick):
       <ul>
         <li>Windows — use <a href="https://rufus.ie/">Rufus</a>: select the USB, choose <code>deryaos.img</code>, write in <em>DD image</em> mode.</li>
@@ -113,7 +113,7 @@
     <li><strong>Install to the internal disk</strong> from that shell:
       <pre><code>inst plan ATA0            # survey the disk (try AHCI0 / NVME0 if ATA0 is empty)
 inst -f ATA0 compact     # fresh full install to that disk</code></pre>
-      Then reboot and pick the new disk. <em>Tiny CD/diskette alternative:</em> the <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/DeryaOS-minimal-seed.iso">seed ISO</a> and <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4273/DeryaOS-minimal-seed.img">1.44 MB diskette</a> boot the same installer.</li>
+      Then reboot and pick the new disk. <em>Tiny CD/diskette alternative:</em> the <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4274/DeryaOS-minimal-seed.iso">seed ISO</a> and <a href="https://github.com/deryaos/deryaos.github.io/releases/download/beta-part4274/DeryaOS-minimal-seed.img">1.44 MB diskette</a> boot the same installer.</li>
   </ol>
 
   <h2 id="first">First steps after it boots</h2>
