@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DeryaOS — a from-scratch x86 operating system</title>
-<meta name="description" content="DeryaOS is an independent x86 operating system built from scratch — its own bootloader, dual 32/64-bit kernels, native GUI desktop, networking and filesystems. Currently in private beta.">
+<title>DeryaOS — a from-scratch operating system</title>
+<meta name="description" content="DeryaOS is an independent operating system built from scratch — its own bootloader, native GUI desktop, networking and filesystems. Architecture-independent by design, running today on 32/64-bit x86. In private beta.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<nav class="langbar">
+  <div class="wrap">
+    <span class="brandmini">Derya<span>OS</span></span>
+    <span class="langs">
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="tr">Türkçe</button>
+      <button class="lang-btn" data-lang="ru">Русский</button>
+      <button class="lang-btn" data-lang="ar">العربية</button>
+    </span>
+  </div>
+</nav>
+
 <header class="hero">
   <div class="wrap">
     <div class="logo">Derya<span>OS</span></div>
-    <p class="tag">An independent x86 operating system, built from scratch.</p>
-    <p class="sub">Its own bootloader. Two kernels (32-bit &amp; 64-bit). A native GUI desktop, a networking stack, multiple filesystems, and over-the-air updates — no Linux, no BSD, no borrowed kernel underneath.</p>
-    <p class="status"><span class="dot"></span> Active development &middot; currently in <strong>private beta</strong></p>
+    <p class="tag" data-i18n="tagline">An independent operating system, built from scratch.</p>
+    <p class="sub" data-i18n="sub">Its own bootloader, kernels, GUI desktop, networking stack, multiple filesystems, and over-the-air updates — no Linux, no BSD, no borrowed kernel underneath. Architecture-independent by design: running today on 32- and 64-bit x86, built to reach every architecture.</p>
+    <p class="status" data-i18n-html="status"><span class="dot"></span> Active development &middot; currently in <strong>private beta</strong></p>
   </div>
 </header>
 
@@ -21,46 +34,195 @@
 
   <section class="shots">
     <figure>
-      <img src="assets/desktop-x64.png" alt="DeryaOS 64-bit desktop with windows" loading="lazy">
-      <figcaption>The DeryaOS desktop (64-bit) — windowed apps, taskbar, system tray.</figcaption>
+      <img src="assets/desktop-x64.png" alt="DeryaOS 64-bit desktop" loading="lazy">
+      <figcaption data-i18n="cap1">The DeryaOS desktop (64-bit) — windowed apps, taskbar, system tray.</figcaption>
     </figure>
     <figure>
       <img src="assets/desktop-x32.png" alt="DeryaOS 32-bit desktop" loading="lazy">
-      <figcaption>The same desktop on the 32-bit kernel — one unified codebase, two architectures.</figcaption>
+      <figcaption data-i18n="cap2">The same desktop on the 32-bit kernel — one unified codebase.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>What it is</h2>
-    <p>DeryaOS is written from the ground up: the boot chain, the kernels, the drivers, the GUI, the network protocols and the filesystems are all original code. The exact same source builds and runs on both 32-bit and 64-bit x86, so a fix lands on both at once.</p>
+    <h2 data-i18n="h_what">What it is</h2>
+    <p data-i18n="p_what">DeryaOS is written from the ground up: the boot chain, the kernels, the drivers, the GUI, the network protocols and the filesystems are all original code. One unified codebase already runs on both 32-bit and 64-bit x86 from the same source — the foundation for bringing DeryaOS to any architecture.</p>
   </section>
 
   <section>
-    <h2>Highlights</h2>
+    <h2 data-i18n="h_high">Highlights</h2>
     <div class="grid">
-      <div class="card"><h3>Native desktop</h3><p>A real windowed GUI — draggable, resizable windows, a taskbar and start menu, with built-in apps: a text editor, file manager, web viewer, system tools and a few games.</p></div>
-      <div class="card"><h3>Dual architecture</h3><p>One codebase, 32-bit and 64-bit kernels, with preemptive multitasking on both.</p></div>
-      <div class="card"><h3>Networking</h3><p>An original TCP/IP stack — ARP, IPv4, ICMP, UDP, TCP, DNS and HTTP — driving real network cards.</p></div>
-      <div class="card"><h3>Filesystems</h3><p>Read/write FAT16, FAT32, exFAT and the native DeryaFS; read support for NTFS and ISO 9660.</p></div>
-      <div class="card"><h3>Over-the-air updates</h3><p>The system updates itself in the background and verifies every component cryptographically before applying it, with automatic rollback if a new build misbehaves.</p></div>
-      <div class="card"><h3>Its own installer</h3><p>Boots from USB or CD, partitions a disk, and installs — boot manager included.</p></div>
+      <div class="card"><h3 data-i18n="c1h">Native desktop</h3><p data-i18n="c1p">A real windowed GUI — draggable, resizable windows, a taskbar and start menu, with built-in apps: a text editor, file manager, web viewer, system tools and a few games.</p></div>
+      <div class="card"><h3 data-i18n="c2h">Built to be portable</h3><p data-i18n="c2p">One unified codebase, today on 32-bit and 64-bit x86 with preemptive multitasking — designed to extend to any architecture.</p></div>
+      <div class="card"><h3 data-i18n="c3h">Networking</h3><p data-i18n="c3p">An original TCP/IP stack — ARP, IPv4, ICMP, UDP, TCP, DNS and HTTP — driving real network cards.</p></div>
+      <div class="card"><h3 data-i18n="c4h">Filesystems</h3><p data-i18n="c4p">Read/write FAT16, FAT32, exFAT and the native DeryaFS; read support for NTFS and ISO 9660.</p></div>
+      <div class="card"><h3 data-i18n="c5h">Over-the-air updates</h3><p data-i18n="c5p">The system updates itself in the background and verifies every component cryptographically before applying it, with automatic rollback if a new build misbehaves.</p></div>
+      <div class="card"><h3 data-i18n="c6h">Its own installer</h3><p data-i18n="c6p">Boots from USB or CD, partitions a disk, and installs — boot manager included.</p></div>
     </div>
   </section>
 
+  <section class="dl">
+    <h2 data-i18n="h_dl">Download</h2>
+    <p data-i18n="dl_p">Try DeryaOS for x86 (32/64-bit). It's early beta software — don't run it on a machine whose data you can't afford to lose.</p>
+    <div class="grid">
+      <div class="card dlcard">
+        <h3 data-i18n="dl_vm">Sample VM (ready to run)</h3>
+        <p data-i18n="dl_vm_d">Unzip, install QEMU, run the launcher — a DeryaOS desktop boots in a window.</p>
+        <a class="dlbtn" href="https://github.com/ibrahimboul-ai/deryaos-web/releases/download/beta-part4231/deryaos-x86-vm.zip">deryaos-x86-vm.zip</a>
+      </div>
+      <div class="card dlcard">
+        <h3 data-i18n="dl_img">Installer image (USB)</h3>
+        <p data-i18n="dl_img_d">Gunzip and write to a USB stick (Rufus / dd), then boot to install on real hardware.</p>
+        <a class="dlbtn" href="https://github.com/ibrahimboul-ai/deryaos-web/releases/download/beta-part4231/deryaos-x86.img.gz">deryaos-x86.img.gz</a>
+      </div>
+    </div>
+    <p class="dlnote" data-i18n="dl_note">More architectures, ISO and seed images are on the way. <a href="https://github.com/ibrahimboul-ai/deryaos-web/releases">All releases &rarr;</a></p>
+  </section>
+
   <section class="beta">
-    <h2>Beta program</h2>
-    <p>DeryaOS is being tested on real hardware and in virtual machines. We are looking for a small group of <strong>beta testers</strong> who can run it, push it, and report what they find — what works, what breaks, what feels wrong. Findings are reviewed together and turned into fixes.</p>
-    <p>It is early software: expect rough edges, and don't run it on a machine whose data you can't afford to lose. If that sounds like your kind of fun, get in touch.</p>
-    <p class="cta"><a href="mailto:ibrahim.boul@gmail.com?subject=DeryaOS%20beta%20tester">Ask about joining the beta &rarr;</a></p>
+    <h2 data-i18n="h_beta">Beta program</h2>
+    <p data-i18n-html="beta1">DeryaOS is being tested on real hardware and in virtual machines. We are looking for a small group of <strong>beta testers</strong> who can run it, push it, and report what they find — what works, what breaks, what feels wrong. Findings are reviewed together and turned into fixes.</p>
+    <p data-i18n="beta2">It is early software: expect rough edges, and don't run it on a machine whose data you can't afford to lose. If that sounds like your kind of fun, get in touch.</p>
+    <p class="cta"><a href="mailto:ibrahim.boul@gmail.com?subject=DeryaOS%20beta%20tester" data-i18n="cta">Ask about joining the beta &rarr;</a></p>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>DeryaOS &middot; an independent operating-system project.</p>
-    <p class="fine">This site shares general information only. Beta builds and update details are provided privately to testers.</p>
+    <p data-i18n="foot1">DeryaOS &middot; an independent operating-system project.</p>
+    <p class="fine" data-i18n="foot2">This site shares general information only. Beta builds and update details are provided privately to testers.</p>
   </div>
 </footer>
+
+<script>
+const I18N = {
+  en: {
+    tagline:"An independent operating system, built from scratch.",
+    sub:"Its own bootloader, kernels, GUI desktop, networking stack, multiple filesystems, and over-the-air updates — no Linux, no BSD, no borrowed kernel underneath. Architecture-independent by design: running today on 32- and 64-bit x86, built to reach every architecture.",
+    status:'<span class="dot"></span> Active development &middot; currently in <strong>private beta</strong>',
+    cap1:"The DeryaOS desktop (64-bit) — windowed apps, taskbar, system tray.",
+    cap2:"The same desktop on the 32-bit kernel — one unified codebase.",
+    h_what:"What it is",
+    p_what:"DeryaOS is written from the ground up: the boot chain, the kernels, the drivers, the GUI, the network protocols and the filesystems are all original code. One unified codebase already runs on both 32-bit and 64-bit x86 from the same source — the foundation for bringing DeryaOS to any architecture.",
+    h_high:"Highlights",
+    c1h:"Native desktop", c1p:"A real windowed GUI — draggable, resizable windows, a taskbar and start menu, with built-in apps: a text editor, file manager, web viewer, system tools and a few games.",
+    c2h:"Built to be portable", c2p:"One unified codebase, today on 32-bit and 64-bit x86 with preemptive multitasking — designed to extend to any architecture.",
+    c3h:"Networking", c3p:"An original TCP/IP stack — ARP, IPv4, ICMP, UDP, TCP, DNS and HTTP — driving real network cards.",
+    c4h:"Filesystems", c4p:"Read/write FAT16, FAT32, exFAT and the native DeryaFS; read support for NTFS and ISO 9660.",
+    c5h:"Over-the-air updates", c5p:"The system updates itself in the background and verifies every component cryptographically before applying it, with automatic rollback if a new build misbehaves.",
+    c6h:"Its own installer", c6p:"Boots from USB or CD, partitions a disk, and installs — boot manager included.",
+    h_dl:"Download",
+    dl_p:"Try DeryaOS for x86 (32/64-bit). It's early beta software — don't run it on a machine whose data you can't afford to lose.",
+    dl_vm:"Sample VM (ready to run)", dl_vm_d:"Unzip, install QEMU, run the launcher — a DeryaOS desktop boots in a window.",
+    dl_img:"Installer image (USB)", dl_img_d:"Gunzip and write to a USB stick (Rufus / dd), then boot to install on real hardware.",
+    dl_note:'More architectures, ISO and seed images are on the way. <a href="https://github.com/ibrahimboul-ai/deryaos-web/releases">All releases &rarr;</a>',
+    h_beta:"Beta program",
+    beta1:"DeryaOS is being tested on real hardware and in virtual machines. We are looking for a small group of <strong>beta testers</strong> who can run it, push it, and report what they find — what works, what breaks, what feels wrong. Findings are reviewed together and turned into fixes.",
+    beta2:"It is early software: expect rough edges, and don't run it on a machine whose data you can't afford to lose. If that sounds like your kind of fun, get in touch.",
+    cta:"Ask about joining the beta &rarr;",
+    foot1:"DeryaOS &middot; an independent operating-system project.",
+    foot2:"This site shares general information only. Beta builds and update details are provided privately to testers."
+  },
+  tr: {
+    tagline:"Sıfırdan geliştirilen bağımsız bir işletim sistemi.",
+    sub:"Kendi önyükleyicisi, çekirdekleri, grafiksel masaüstü, ağ yığını, birden çok dosya sistemi ve havadan güncellemeler — altında Linux yok, BSD yok, ödünç alınmış çekirdek yok. Tasarımı gereği mimariden bağımsız: bugün 32- ve 64-bit x86 üzerinde çalışıyor, her mimariye ulaşmak için inşa edildi.",
+    status:'<span class="dot"></span> Etkin geliştirme &middot; şu anda <strong>özel beta</strong> aşamasında',
+    cap1:"DeryaOS masaüstü (64-bit) — pencereli uygulamalar, görev çubuğu, sistem tepsisi.",
+    cap2:"Aynı masaüstü 32-bit çekirdekte — tek bir birleşik kaynak kodu.",
+    h_what:"Nedir",
+    p_what:"DeryaOS tamamen sıfırdan yazılmıştır: önyükleme zinciri, çekirdekler, sürücüler, grafik arayüz, ağ protokolleri ve dosya sistemlerinin tümü özgün koddur. Tek bir birleşik kaynak kodu, aynı kaynaktan hem 32-bit hem de 64-bit x86 üzerinde çalışıyor — DeryaOS'u herhangi bir mimariye taşımanın temeli.",
+    h_high:"Öne çıkanlar",
+    c1h:"Yerel masaüstü", c1p:"Gerçek pencereli bir arayüz — sürüklenebilir, yeniden boyutlandırılabilir pencereler, görev çubuğu ve başlat menüsü; yerleşik uygulamalarla: metin düzenleyici, dosya yöneticisi, web görüntüleyici, sistem araçları ve birkaç oyun.",
+    c2h:"Taşınabilir olacak şekilde tasarlandı", c2p:"Tek birleşik kaynak kodu, bugün öncelikli çoklu görevle 32-bit ve 64-bit x86 üzerinde — herhangi bir mimariye genişleyecek şekilde tasarlandı.",
+    c3h:"Ağ", c3p:"Özgün bir TCP/IP yığını — ARP, IPv4, ICMP, UDP, TCP, DNS ve HTTP — gerçek ağ kartlarını sürer.",
+    c4h:"Dosya sistemleri", c4p:"FAT16, FAT32, exFAT ve yerel DeryaFS için okuma/yazma; NTFS ve ISO 9660 için okuma desteği.",
+    c5h:"Havadan güncellemeler", c5p:"Sistem arka planda kendini günceller ve uygulamadan önce her bileşeni kriptografik olarak doğrular; yeni bir sürüm hatalı davranırsa otomatik geri alma yapar.",
+    c6h:"Kendi yükleyicisi", c6p:"USB veya CD'den başlar, diski bölümler ve kurar — önyükleme yöneticisi dahil.",
+    h_dl:"İndir",
+    dl_p:"DeryaOS'u x86 (32/64-bit) için deneyin. Bu erken bir beta yazılımdır — verisini kaybetmeyi göze alamayacağınız bir makinede çalıştırmayın.",
+    dl_vm:"Örnek Sanal Makine (çalıştırmaya hazır)", dl_vm_d:"Zip'i açın, QEMU'yu kurun, başlatıcıyı çalıştırın — bir pencerede DeryaOS masaüstü açılır.",
+    dl_img:"Kurulum görüntüsü (USB)", dl_img_d:"Gunzip ile açın ve bir USB belleğe yazın (Rufus / dd), ardından gerçek donanıma kurmak için başlatın.",
+    dl_note:'Daha fazla mimari, ISO ve seed görüntüleri yolda. <a href="https://github.com/ibrahimboul-ai/deryaos-web/releases">Tüm sürümler &rarr;</a>',
+    h_beta:"Beta programı",
+    beta1:"DeryaOS gerçek donanımda ve sanal makinelerde test ediliyor. Onu çalıştırabilecek, zorlayabilecek ve bulgularını bildirebilecek küçük bir <strong>beta test</strong> grubu arıyoruz — neyin çalıştığını, neyin bozulduğunu, neyin yanlış hissettirdiğini. Bulgular birlikte değerlendirilir ve düzeltmelere dönüştürülür.",
+    beta2:"Bu erken bir yazılımdır: pürüzler bekleyin ve verisini kaybetmeyi göze alamayacağınız bir makinede çalıştırmayın. Bu size eğlenceli geliyorsa, bizimle iletişime geçin.",
+    cta:"Beta'ya katılmayı sorun &rarr;",
+    foot1:"DeryaOS &middot; bağımsız bir işletim sistemi projesi.",
+    foot2:"Bu site yalnızca genel bilgi paylaşır. Beta sürümleri ve güncelleme ayrıntıları test edicilere özel olarak sağlanır."
+  },
+  ru: {
+    tagline:"Независимая операционная система, написанная с нуля.",
+    sub:"Собственный загрузчик, ядра, графический рабочий стол, сетевой стек, несколько файловых систем и обновления по воздуху — без Linux, без BSD, без заимствованного ядра внутри. Независима от архитектуры по своей сути: сегодня работает на 32- и 64-битном x86, создана, чтобы дойти до любой архитектуры.",
+    status:'<span class="dot"></span> Активная разработка &middot; сейчас в <strong>закрытой бета-версии</strong>',
+    cap1:"Рабочий стол DeryaOS (64-бит) — оконные приложения, панель задач, системный трей.",
+    cap2:"Тот же рабочий стол на 32-битном ядре — единая кодовая база.",
+    h_what:"Что это",
+    p_what:"DeryaOS написана полностью с нуля: цепочка загрузки, ядра, драйверы, графический интерфейс, сетевые протоколы и файловые системы — всё это оригинальный код. Единая кодовая база уже работает и на 32-битном, и на 64-битном x86 из одного источника — основа для переноса DeryaOS на любую архитектуру.",
+    h_high:"Ключевые особенности",
+    c1h:"Родной рабочий стол", c1p:"Настоящий оконный интерфейс — перетаскиваемые окна с изменяемым размером, панель задач и меню «Пуск», со встроенными приложениями: текстовый редактор, файловый менеджер, веб-просмотрщик, системные инструменты и несколько игр.",
+    c2h:"Создана быть переносимой", c2p:"Единая кодовая база, сегодня на 32-битном и 64-битном x86 с вытесняющей многозадачностью — спроектирована для расширения на любую архитектуру.",
+    c3h:"Сеть", c3p:"Оригинальный стек TCP/IP — ARP, IPv4, ICMP, UDP, TCP, DNS и HTTP — управляющий реальными сетевыми картами.",
+    c4h:"Файловые системы", c4p:"Чтение/запись FAT16, FAT32, exFAT и родной DeryaFS; чтение NTFS и ISO 9660.",
+    c5h:"Обновления по воздуху", c5p:"Система обновляется в фоне и криптографически проверяет каждый компонент перед установкой, с автоматическим откатом, если новая сборка работает неправильно.",
+    c6h:"Собственный установщик", c6p:"Загружается с USB или CD, размечает диск и устанавливается — вместе с менеджером загрузки.",
+    h_dl:"Скачать",
+    dl_p:"Попробуйте DeryaOS для x86 (32/64-бит). Это ранняя бета — не запускайте её на машине, данные которой вы не можете позволить себе потерять.",
+    dl_vm:"Готовая виртуальная машина", dl_vm_d:"Распакуйте, установите QEMU, запустите лаунчер — рабочий стол DeryaOS откроется в окне.",
+    dl_img:"Образ установщика (USB)", dl_img_d:"Распакуйте gunzip и запишите на USB-накопитель (Rufus / dd), затем загрузитесь для установки на реальное оборудование.",
+    dl_note:'Другие архитектуры, ISO- и seed-образы — в пути. <a href="https://github.com/ibrahimboul-ai/deryaos-web/releases">Все выпуски &rarr;</a>',
+    h_beta:"Бета-программа",
+    beta1:"DeryaOS тестируется на реальном оборудовании и в виртуальных машинах. Мы ищем небольшую группу <strong>бета-тестеров</strong>, которые смогут запускать её, нагружать и сообщать о находках — что работает, что ломается, что ощущается неправильно. Находки разбираются вместе и превращаются в исправления.",
+    beta2:"Это раннее программное обеспечение: ожидайте шероховатостей и не запускайте его на машине, данные которой вы не можете позволить себе потерять. Если это звучит как ваш вид развлечения — свяжитесь с нами.",
+    cta:"Спросить об участии в бете &rarr;",
+    foot1:"DeryaOS &middot; независимый проект операционной системы.",
+    foot2:"Этот сайт содержит только общую информацию. Бета-сборки и детали обновлений предоставляются тестерам в частном порядке."
+  },
+  ar: {
+    tagline:"نظام تشغيل مستقل، مبني من الصفر.",
+    sub:"محمّل إقلاع وأنوية وسطح مكتب رسومي وحزمة شبكات وأنظمة ملفات متعددة وتحديثات عبر الأثير — كلها خاصة به، بلا Linux، بلا BSD، وبلا نواة مُستعارة في الأسفل. مستقل عن المعمارية بحكم تصميمه: يعمل اليوم على x86 بنسختيه 32 و64-بت، ومبني ليصل إلى كل معمارية.",
+    status:'<span class="dot"></span> تطوير نشِط &middot; حاليًا في <strong>نسخة بيتا خاصة</strong>',
+    cap1:"سطح مكتب DeryaOS (64-بت) — تطبيقات بنوافذ، شريط مهام، وعلبة نظام.",
+    cap2:"نفس سطح المكتب على نواة 32-بت — قاعدة شيفرة موحّدة واحدة.",
+    h_what:"ما هو",
+    p_what:"كُتب DeryaOS من الصفر تمامًا: سلسلة الإقلاع والأنوية والمُشغّلات والواجهة الرسومية وبروتوكولات الشبكة وأنظمة الملفات كلها شيفرة أصلية. قاعدة شيفرة موحّدة واحدة تعمل بالفعل على x86 بنسختيه 32 و64-بت من المصدر نفسه — أساسٌ لنقل DeryaOS إلى أي معمارية.",
+    h_high:"أبرز المزايا",
+    c1h:"سطح مكتب أصلي", c1p:"واجهة رسومية بنوافذ حقيقية — نوافذ قابلة للسحب وتغيير الحجم، وشريط مهام وقائمة ابدأ، مع تطبيقات مدمجة: محرر نصوص، ومدير ملفات، وعارض ويب، وأدوات نظام، وبعض الألعاب.",
+    c2h:"مُصمَّم ليكون قابلًا للنقل", c2p:"قاعدة شيفرة موحّدة واحدة، اليوم على x86 بنسختيه 32 و64-بت مع تعدد مهام استباقي — مُصمَّمة لتمتدّ إلى أي معمارية.",
+    c3h:"الشبكات", c3p:"حزمة TCP/IP أصلية — ARP وIPv4 وICMP وUDP وTCP وDNS وHTTP — تُشغّل بطاقات شبكة حقيقية.",
+    c4h:"أنظمة الملفات", c4p:"قراءة/كتابة FAT16 وFAT32 وexFAT ونظام DeryaFS الأصلي؛ ودعم قراءة NTFS وISO 9660.",
+    c5h:"تحديثات عبر الأثير", c5p:"يُحدّث النظام نفسه في الخلفية ويتحقق من كل مكوّن تشفيريًا قبل تطبيقه، مع تراجع تلقائي إذا أساء إصدار جديد التصرّف.",
+    c6h:"مُثبّت خاص به", c6p:"يُقلع من USB أو CD، ويُقسّم القرص، ويُثبّت — مع مدير إقلاع مُضمّن.",
+    h_dl:"تنزيل",
+    dl_p:"جرّب DeryaOS على x86 (32/64-بت). إنه برنامج بيتا مبكّر — لا تشغّله على جهاز لا يمكنك تحمّل فقدان بياناته.",
+    dl_vm:"جهاز افتراضي جاهز للتشغيل", dl_vm_d:"فكّ الضغط، ثبّت QEMU، شغّل المُطلِق — يُقلع سطح مكتب DeryaOS في نافذة.",
+    dl_img:"صورة المُثبّت (USB)", dl_img_d:"فكّ ضغط gunzip واكتبها على ذاكرة USB (Rufus / dd)، ثم أقلع للتثبيت على عتاد حقيقي.",
+    dl_note:'مزيد من المعماريات وصور ISO وseed في الطريق. <a href="https://github.com/ibrahimboul-ai/deryaos-web/releases">كل الإصدارات &rarr;</a>',
+    h_beta:"برنامج البيتا",
+    beta1:"يُختبَر DeryaOS على عتاد حقيقي وفي أجهزة افتراضية. نبحث عن مجموعة صغيرة من <strong>مختبري البيتا</strong> القادرين على تشغيله وإجهاده والإبلاغ عمّا يجدونه — ما الذي يعمل، وما الذي يتعطّل، وما الذي يبدو خاطئًا. تُراجَع الملاحظات معًا وتُحوّل إلى إصلاحات.",
+    beta2:"هذا برنامج مبكّر: توقّع بعض العيوب، ولا تشغّله على جهاز لا يمكنك تحمّل فقدان بياناته. إذا بدا هذا ممتعًا لك، تواصل معنا.",
+    cta:"استفسر عن الانضمام إلى البيتا &rarr;",
+    foot1:"DeryaOS &middot; مشروع نظام تشغيل مستقل.",
+    foot2:"يشارك هذا الموقع معلومات عامة فقط. تُقدَّم إصدارات البيتا وتفاصيل التحديثات للمختبرين بشكل خاص."
+  }
+};
+const RTL = { ar: true };
+function setLang(l){
+  if(!I18N[l]) l = "en";
+  const t = I18N[l];
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ const k = el.getAttribute("data-i18n"); if(t[k]!=null) el.textContent = t[k]; });
+  document.querySelectorAll("[data-i18n-html]").forEach(function(el){ const k = el.getAttribute("data-i18n-html"); if(t[k]!=null) el.innerHTML = t[k]; });
+  document.querySelectorAll(".dlnote").forEach(function(el){ if(t.dl_note!=null) el.innerHTML = t.dl_note; });
+  document.documentElement.lang = l;
+  document.documentElement.dir = RTL[l] ? "rtl" : "ltr";
+  document.querySelectorAll(".lang-btn").forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-lang")===l); });
+  try{ localStorage.setItem("derya_lang", l); }catch(e){}
+}
+document.querySelectorAll(".lang-btn").forEach(function(b){
+  b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
+});
+let initial = "en";
+try{ initial = localStorage.getItem("derya_lang") || (navigator.language||"en").slice(0,2); }catch(e){}
+setLang(I18N[initial] ? initial : "en");
+</script>
 </body>
 </html>

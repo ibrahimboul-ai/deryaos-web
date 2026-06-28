@@ -6,15 +6,25 @@
 html,body{margin:0;padding:0}
 body{
   background:var(--bg); color:var(--ink);
-  font:16px/1.6 "Segoe UI",Roboto,system-ui,-apple-system,sans-serif;
+  font:16px/1.6 "Segoe UI",Roboto,system-ui,-apple-system,"Noto Naskh Arabic",sans-serif;
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:980px;margin:0 auto;padding:0 22px}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
+/* language bar */
+.langbar{position:sticky;top:0;z-index:10;background:rgba(11,15,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--edge)}
+.langbar .wrap{display:flex;align-items:center;justify-content:space-between;height:48px}
+.brandmini{font-weight:800;letter-spacing:-.3px}
+.brandmini span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.langs{display:flex;gap:4px;flex-wrap:wrap}
+.lang-btn{background:transparent;border:1px solid transparent;color:var(--dim);font:inherit;font-size:13px;padding:5px 9px;border-radius:7px;cursor:pointer}
+.lang-btn:hover{color:var(--ink);border-color:var(--edge)}
+.lang-btn.active{color:#fff;background:rgba(79,140,255,.16);border-color:rgba(79,140,255,.4)}
+
 .hero{
-  padding:84px 0 56px;
+  padding:74px 0 56px;
   background:
     radial-gradient(1100px 480px at 50% -120px,rgba(79,140,255,.22),transparent 60%),
     linear-gradient(180deg,#0d1320,#0b0f17);
@@ -24,9 +34,9 @@ a:hover{text-decoration:underline}
 .logo{font-size:60px;font-weight:800;letter-spacing:-1px}
 .logo span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .tag{font-size:22px;margin:14px 0 8px;color:var(--ink)}
-.sub{max-width:660px;margin:0 auto;color:var(--dim);font-size:17px}
+.sub{max-width:680px;margin:0 auto;color:var(--dim);font-size:17px}
 .status{margin-top:26px;color:var(--dim);font-size:14px}
-.status .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px rgba(61,220,132,.15);margin-right:8px;vertical-align:middle}
+.status .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px rgba(61,220,132,.15);margin-inline-end:8px;vertical-align:middle}
 .status strong{color:var(--good)}
 
 section{padding:46px 0;border-bottom:1px solid var(--edge)}
@@ -42,6 +52,14 @@ h3{margin:0 0 6px;font-size:17px;color:var(--ink)}
 .card{background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:18px}
 .card p{color:var(--dim);margin:0;font-size:14.5px}
 
+/* download */
+.dl .grid{grid-template-columns:1fr 1fr}
+.dlcard{display:flex;flex-direction:column}
+.dlcard p{flex:1;margin-bottom:14px}
+.dlbtn{align-self:flex-start;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-weight:600;padding:9px 16px;border-radius:9px;font-size:14px}
+.dlbtn:hover{text-decoration:none;opacity:.92}
+.dlnote{color:var(--dim);font-size:13.5px;margin-top:18px}
+
 .beta p{color:var(--dim);max-width:760px}
 .beta strong{color:var(--ink)}
 .cta{margin-top:22px}
@@ -55,7 +73,11 @@ footer{padding:30px 0;color:var(--dim);text-align:center}
 footer p{margin:4px 0}
 .fine{font-size:12.5px;color:#6b7691}
 
+/* RTL (Arabic) */
+[dir="rtl"] .beta p,[dir="rtl"] .sub{text-align:right}
+[dir="rtl"] .dlbtn,[dir="rtl"] .cta a{direction:rtl}
+
 @media(max-width:760px){
-  .shots,.grid{grid-template-columns:1fr}
+  .shots,.grid,.dl .grid{grid-template-columns:1fr}
   .logo{font-size:46px}.tag{font-size:19px}
 }
